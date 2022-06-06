@@ -1,0 +1,972 @@
+function checkTypeIsStringOrNull(obj) {
+    pm.expect(obj).to.satisfy(function(s){ return s === null || typeof s == 'string'}, 'must be a string or null');
+}
+
+pm.test("Status code is 200", function () { 
+    pm.response.to.have.status(200); 
+});
+
+pm.test("Content-Length is present and is not 0", function () {
+    pm.response.to.have.header("content-length");
+    pm.expect(pm.response.headers.toObject()["content-length"]).to.not.equal("0");
+});
+
+pm.test("Content-Type is present and is 'application/json'", function () {
+    pm.response.to.have.header("Content-Type");
+    pm.response.to.be.header("Content-Type", "application/json");
+});
+
+pm.test("Response must be valid and have a body", function () {
+     // assert that the status code is 200
+     pm.response.to.be.ok; 
+     
+     // assert that the response has a valid JSON body
+     pm.response.to.be.withBody;
+     pm.response.to.be.json; // this assertion also checks if a body exists, so the above check is not needed
+});
+
+
+pm.test("Response JSON entry has - uInteractTsAndCs - is a string with 'Y' or 'N'", function () {
+    pm.expect(jsonData).to.have.property('uInteractTsAndCs');
+    checkTypeIsSAMBool(jsonData.uInteractTsAndCs);
+});
+
+
+
+
+
+
+
+
+User profile
+
+
+function checkTypeIsStringOrNull(obj) {
+    pm.expect(obj).to.satisfy(function(s){ return s === null || typeof s == 'string'}, 'must be a string or null');
+}
+
+pm.test("Status code is 200", function () { 
+    pm.response.to.have.status(200); 
+});
+
+pm.test("Content-Length is present and is not 0", function () {
+    pm.response.to.have.header("content-length");
+    pm.expect(pm.response.headers.toObject()["content-length"]).to.not.equal("0");
+});
+
+pm.test("Content-Type is present and is 'application/json'", function () {
+    pm.response.to.have.header("Content-Type");
+    pm.response.to.be.header("Content-Type", "application/json");
+});
+
+pm.test("Response must be valid and have a body", function () {
+     // assert that the status code is 200
+     pm.response.to.be.ok; 
+     
+     // assert that the response has a valid JSON body
+     pm.response.to.be.withBody;
+     pm.response.to.be.json; // this assertion also checks if a body exists, so the above check is not needed
+});
+
+const jsonData = pm.response.json();
+
+pm.test("Response JSON is an object/dict", function () {
+    pm.expect(jsonData).to.be.a('object');
+});
+
+pm.test("Response JSON entry has - uId - non zero positive number", function () {
+    pm.expect(jsonData).to.have.property('uId');
+    pm.expect(jsonData.uId).to.be.a('number');
+    pm.expect(jsonData.uId).to.be.at.least(1);
+});
+
+pm.test("Response JSON entry has - uEmail - non empty string", function () {
+    pm.expect(jsonData).to.have.property('uEmail');
+    pm.expect(jsonData.uEmail).to.be.a('string');
+    pm.expect(jsonData.uEmail.length).to.be.at.least(6);    // min length("a@b.co")
+});
+
+pm.test("Response JSON entry has - uFirstName - null or string", function () {
+    pm.expect(jsonData).to.have.property('uFirstName');
+    checkTypeIsStringOrNull(jsonData.uFirstName);
+});
+
+pm.test("Response JSON entry has - uLastName - null or string", function () {
+    pm.expect(jsonData).to.have.property('uLastName');
+    checkTypeIsStringOrNull(jsonData.uLastName);
+});
+
+pm.test("Response JSON entry has - uPhone - null or string", function () {
+    pm.expect(jsonData).to.have.property('uPhone');
+    checkTypeIsStringOrNull(jsonData.uPhone);
+});
+
+pm.test("Response JSON entry has - uMobile - null or string", function () {
+    pm.expect(jsonData).to.have.property('uMobile');
+    checkTypeIsStringOrNull(jsonData.uMobile);
+});
+
+pm.test("Response JSON entry has - uAddress - null or string", function () {
+    pm.expect(jsonData).to.have.property('uAddress');
+    checkTypeIsStringOrNull(jsonData.uAddress);
+});
+
+pm.test("Response JSON entry has - uCity - null or string", function () {
+    pm.expect(jsonData).to.have.property('uCity');
+    checkTypeIsStringOrNull(jsonData.uCity);
+});
+
+pm.test("Response JSON entry has - uSuburb - null or string", function () {
+    pm.expect(jsonData).to.have.property('uSuburb');
+    checkTypeIsStringOrNull(jsonData.uSuburb);
+});
+
+pm.test("Response JSON entry has - uPostcode - null or string", function () {
+    pm.expect(jsonData).to.have.property('uPostcode');
+    checkTypeIsStringOrNull(jsonData.uPostcode);
+});
+
+pm.test("Response JSON entry has - uStateCode - null or string", function () {
+    pm.expect(jsonData).to.have.property('uStateCode');
+    checkTypeIsStringOrNull(jsonData.uStateCode);
+});
+
+pm.test("Response JSON entry has - uStateName - null or string", function () {
+    pm.expect(jsonData).to.have.property('uStateName');
+    checkTypeIsStringOrNull(jsonData.uStateName);
+});
+
+pm.test("Response JSON entry has - uCountryCode - null or string", function () {
+    pm.expect(jsonData).to.have.property('uCountryCode');
+    checkTypeIsStringOrNull(jsonData.uCountryCode);
+});
+
+pm.test("Response JSON entry has - uCountryName - null or string", function () {
+    pm.expect(jsonData).to.have.property('uCountryName');
+    checkTypeIsStringOrNull(jsonData.uCountryName);
+});
+
+pm.test("Response JSON entry has - uFax - null or string", function () {
+    pm.expect(jsonData).to.have.property('uFax');
+    checkTypeIsStringOrNull(jsonData.uFax);
+});
+
+pm.test("Response JSON entry has - uDepartment - null or string", function () {
+    pm.expect(jsonData).to.have.property('uDepartment');
+    checkTypeIsStringOrNull(jsonData.uDepartment);
+});
+
+pm.test("Response JSON entry has - uDivision - null or string", function () {
+    pm.expect(jsonData).to.have.property('uDivision');
+    checkTypeIsStringOrNull(jsonData.uDivision);
+});
+
+pm.test("Response JSON entry has - uTimezone - null or string", function () {
+    pm.expect(jsonData).to.have.property('uTimezone');
+    checkTypeIsStringOrNull(jsonData.uTimezone);
+});
+
+Boolean型
+
+pm.test("Response JSON entry has - isUserConnected - bool", function () {
+    pm.expect(jsonData).to.have.property('isUserConnected');
+    pm.expect(jsonData.isUserConnected).to.be.a('boolean');
+});
+
+https://blog.csdn.net/liyazhen2011/article/details/89737131
+
+Array 指针
+
+const jsonData = pm.response.json();
+
+pm.test("Response JSON is an array", function () {
+    pm.expect(jsonData).to.be.a('array');
+});
+
+//
+// For each dict entry in the array of notifications, we validate all the fields to make sure they are correct
+// and according to spec, and confirming to what the UI expecting.
+//
+
+pm.test("Response JSON dict entry has - userNotificationId - non zero positive number", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('userNotificationId');
+        pm.expect(jsonData[i].userNotificationId).to.be.a('number');
+        pm.expect(jsonData[i].userNotificationId).to.be.at.least(1);
+    }
+});
+
+pm.test("Response JSON dict entry has - userNotificationTypeId - non zero positive number of a specific value", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('userNotificationTypeId');
+        pm.expect(jsonData[i].userNotificationTypeId).to.be.a('number');
+        pm.expect(jsonData[i].userNotificationTypeId).to.be.oneOf([1 /* Connection Invite */,
+                                                                   2 /* Event Invite */,
+                                                                   3 /* Asset Update */,
+                                                                   4 /* Smart Library Update */,
+                                                                   5 /* Basic Message */
+                                                                   ]);
+    }
+});
+
+pm.test("Response JSON dict entry has - userNotificationTypeName - non null and a string (>= 1 length)", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('userNotificationTypeName');
+        pm.expect(jsonData[i].userNotificationTypeName).to.be.a('string');
+        pm.expect(jsonData[i].userNotificationTypeName.length).to.be.at.least(1);
+    }
+});
+
+pm.test("Response JSON dict entry has - message - non null and a string (>= 1 length)", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('message');
+        pm.expect(jsonData[i].message).to.be.a('string');
+        pm.expect(jsonData[i].message.length).to.be.at.least(1);
+    }
+});
+
+pm.test("Response JSON dict entry has - notificationURL - null or string (>= 1 length)", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('notificationURL');
+        checkTypeIsStringOrNull(jsonData[i].notificationURL);
+    }
+});
+
+https://testerhome.com/topics/18719
+
+ 
+
+判断response值等于value
+
+pm.test("tempImageName equal smartFile value", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.tempImageName).to.eql(jsonData.smartFile);
+});
+
+pm.test("Response must be valid and have a body", function () {
+ 
+     pm.response.to.be.unauthorized; 
+     
+     // assert that the response has a valid JSON body
+     pm.response.to.be.withBody;
+     pm.response.to.be.json; // this assertion also checks if a body exists, so the above check is not needed
+});
+
+
+判断boolean true or false
+var schema = {
+ "items": {
+ "type": "boolean"
+ }
+};
+var data1 = [true, false];
+
+pm.test('Schema is valid', function() {
+  pm.expect(tv4.validate(data1, schema)).to.be.true;});
+
+HTTP状态码：每发出一个http请求之后，就会有一个响应，http本身会有一个状态码，来标示这个请求是否成功，常见状态码： 
+200，2开头的都表示这个请求发送成功，最常见的就是200 
+300，3开头的代表重定向，最常见的是302，把这个请求重定向到别的地方了 
+400，400代表客户端发送的请求有语法错误，401代表访问的页面没有授权，403代表没有权限访问这个页面，404代表没有这个页面 
+500，5开头的代表服务器有异常，500代表服务器内部异常，504代表服务器端超时，没返回结果
+
+ 
+pm.test("Status code is 200", function () { 
+    pm.response.to.have.status(200); 
+});
+
+pm.test("Content-Length is present and is not 0", function () {
+    pm.response.to.have.header("content-length");
+    pm.expect(pm.response.headers.toObject()["content-length"]).to.not.equal("0");
+});
+
+pm.test("Content-Type is present and is 'application/json'", function () {
+    pm.response.to.have.header("Content-Type");
+    pm.response.to.be.header("Content-Type", "application/json");
+});
+
+pm.test("Response must be valid and have a body", function () {
+     // assert that the status code is 200
+     pm.response.to.be.ok; 
+     
+     // assert that the response has a valid JSON body
+     pm.response.to.be.withBody;
+     pm.response.to.be.json; // this assertion also checks if a body exists, so the above check is not needed
+});
+
+const jsonData = pm.response.json();
+
+pm.test("Response JSON is an object/dict", function () {
+    pm.expect(jsonData).to.be.a('object');
+});
+
+pm.test("Response JSON entry has - type - non null string", function () {
+    pm.expect(jsonData).to.have.property('type');
+    pm.expect(jsonData.type).to.be.a('string');
+    pm.expect(jsonData.type.length).to.be.at.least(1);
+    
+    pm.expect(jsonData.type).to.be.oneOf(["I" /* Inbound */,
+                                          "O" /* Outbound */,
+                                          "S" /* SAM/Standard  */
+                                                   ]);
+});
+
+pm.test("Response JSON entry has - type - and must be O for OUTBOUND user", function () {
+    pm.expect(jsonData).to.have.property('type');
+    pm.expect(jsonData.type).to.be.a('string');
+    pm.expect(jsonData.type.length).to.be.at.least(1);
+    
+    pm.expect(jsonData.type).to.be.oneOf([/* "I" Inbound */
+                                          "O" /* Outbound */
+                                          /* "S" SAM/Standard  */
+                                                   ]);
+});
+
+pm.test("Response JSON entry has - clientId - non empty string", function () {
+    pm.expect(jsonData).to.have.property('clientId');
+    pm.expect(jsonData.clientId).to.be.a('string');
+    pm.expect(jsonData.clientId.length).to.be.at.least(1);
+});
+
+pm.test("Response JSON entry has - clientId - is 'app_client'", function () {
+    pm.expect(jsonData).to.have.property('clientId');
+    pm.expect(jsonData.clientId).to.be.a('string');
+    pm.expect(jsonData.clientId.length).to.be.at.least(1);
+    
+    pm.expect(jsonData.clientId).to.equal("app_client"); 
+});
+
+pm.test("Response JSON entry has - clientSecret - non null non empty string", function () {
+    pm.expect(jsonData).to.have.property('clientSecret');
+
+    pm.expect(jsonData.clientSecret).to.be.a('string');
+    pm.expect(jsonData.clientSecret.length).to.be.at.least(1);
+    
+    pm.environment.set("SAM_SSO_OUTBOUND_CLIENT_SECRET", jsonData.clientSecret);
+});
+
+pm.test("Response JSON entry has - idpUrl - non null non empty string", function () {
+    pm.expect(jsonData).to.have.property('idpUrl');
+
+    pm.expect(jsonData.idpUrl).to.be.a('string');
+    pm.expect(jsonData.idpUrl.length).to.be.at.least(1);
+    
+    pm.environment.set("SAM_SSO_OUTBOUND_IDP_URL", jsonData.idpUrl);
+
+});
+
+ 
+无response 
+//
+// Utility Functions
+//
+function checkTypeIsStringOrNull(obj) {
+    pm.expect(obj).to.satisfy(function(s){ return s === null || typeof s == 'string'}, 'must be a string or null');
+}
+function checkTypeIsNumberOrNull(obj, checkGreaterThanZeroIfNotNull = false) {
+    pm.expect(obj).to.satisfy(function(s){ return s === null || typeof s == 'number'}, 'must be a number or null');
+    if (typeof obj == 'number' && checkGreaterThanZeroIfNotNull === true) {
+        pm.expect(obj).to.be.at.least(1);
+    }
+}
+function checkANotNullThenBNotNullToo(obj1, obj2) {
+    if (obj1 !== null) {
+        pm.expect(obj2).to.satisfy(function(s){ return s !== null }, 'must be non null');
+    } else {
+        pm.expect(obj2).to.satisfy(function(s){ return s === null }, 'must be null');
+    }
+}
+function checkTypeIsSAMBool(obj) {
+    pm.expect(obj).to.be.a('string');
+    pm.expect(obj).to.be.oneOf(["Y" /* Yes/True */,
+                                "N" /* No/False */]);
+}
+
+//
+// Tests
+//
+
+pm.test("Status code is 200", function () { 
+    pm.response.to.have.status(200); 
+});
+
+// cannot be zero as an empty JSON array is always at least two chars ie "[]"
+pm.test("Content-Length is present and is not 0", function () {
+    pm.response.to.have.header("content-length");
+    pm.expect(pm.response.headers.toObject()["content-length"]).to.not.equal("0");
+});
+
+pm.test("Content-Type is present and is 'application/json'", function () {
+    pm.response.to.have.header("Content-Type");
+    pm.response.to.be.header("Content-Type", "application/json");
+});
+
+pm.test("Response must be valid and have a body", function () {
+     // assert that the status code is 200
+     pm.response.to.be.ok; 
+     
+     // assert that the response has a valid JSON body
+     pm.response.to.be.withBody;
+     pm.response.to.be.json; // this assertion also checks if a body exists, so the above check is not needed
+});
+
+const jsonData = pm.response.json();
+
+pm.test("Response JSON is an array", function () {
+    pm.expect(jsonData).to.be.a('array');
+});
+ 
+
+8. Jason is array or not array
+
+If response is only 1, jason is not array 
+Jason is object:
+pm.test("Response JSON is an object/dict", function () {
+    pm.expect(jsonData).to.be.a('object');
+});
+
+pm.test("Response JSON entry has - uId - non zero positive number", function () {
+    pm.expect(jsonData).to.have.property('uId');
+    pm.expect(jsonData.uId).to.be.a('number');
+    pm.expect(jsonData.uId).to.be.at.least(1);
+});
+
+pm.test("Response JSON entry has - uEmail - non empty string", function () {
+    pm.expect(jsonData).to.have.property('uEmail');
+    pm.expect(jsonData.uEmail).to.be.a('string');
+    pm.expect(jsonData.uEmail.length).to.be.at.least(6);    // min length("a@b.co")
+});
+
+pm.test("Response JSON entry has - uFirstName - null or string", function () {
+    pm.expect(jsonData).to.have.property('uFirstName');
+    checkTypeIsStringOrNull(jsonData.uFirstName);
+});
+
+Jason is array
+
+const jsonData = pm.response.json();
+pm.test("Response JSON is an array", function () {
+   pm.expect(jsonData).to.be.a('array');
+});
+
+pm.test("Response JSON dict entry has - eId - non zero positive number", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eId');
+        pm.expect(jsonData[i].eId).to.be.a('number');
+        pm.expect(jsonData[i].eId).to.be.at.least(1);
+    }
+});
+
+pm.test("Response JSON dict entry has - eTimezoneId - non null and a string (>= 1 length)", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eTimezoneId');
+        pm.expect(jsonData[i].eTimezoneId).to.be.a('string');
+        pm.expect(jsonData[i].eTimezoneId.length).to.be.at.least(1);
+    }
+});
+pm.test("Response JSON dict entry has - eGmtOffsetMinutes - number", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eGmtOffsetMinutes');
+        pm.expect(jsonData[i].eGmtOffsetMinutes).to.be.a('number');
+    }
+});
+
+
+Some tricks in postman test 
+
+1.	Auto set authtoken 
+
+Put this code in pre-request script 
+
+const samLoginRequest = {
+  url: "https://" + pm.variables.get('IT_SAM_HOSTNAME') + "/rest/user/login?h=1",
+  method: 'POST',
+  body: {
+            mode: 'urlencoded',
+            urlencoded: [
+                         { key: "uEmail", value: "qa.erza@yopmail.com" },
+                         { key: "uPassword", value: "Password1" },
+                         { key: "version", value: "1" },
+                         { key: "appCode", value: "MY" }
+                        ]
+        }
+};
+
+//console.log(samLoginRequest);
+
+pm.sendRequest(samLoginRequest, function (err, response) {
+  if (err) {
+    console.log(err);
+  } else {
+    //console.log(response.json());
+    //console.log(response);
+    //console.log(response.headers.toObject()["x-nextinteract-authtoken"]);
+    pm.environment.set("SAM_AUTH_TOKEN", response.headers.toObject()["x-nextinteract-authtoken"]);
+    
+    console.log(pm.cookies);
+  }
+});
+
+//console.log(samLoginRequest);
+
+pm.sendRequest(samLoginRequest, function (err, response) {
+  if (err) {
+    console.log(err);
+  } else {
+    //console.log(response.json());
+    //console.log(response);
+    //console.log(response.headers.toObject()["x-nextinteract-authtoken"]);
+    pm.environment.set("SAM_AUTH_JSESSIONID", response.headers.toObject()["JSESSIONID"]);
+    
+    console.log(pm.cookies);
+  }
+});
+pm.sendRequest(samLoginRequest, function (err, response) {
+  if (err) {
+    console.log(err);
+  } else {
+    //console.log(response.json());
+    //console.log(response);
+    //console.log(response.headers.toObject()["x-nextinteract-authtoken"]);
+    pm.environment.set("SAM_AUTH_AWSELB", response.headers.toObject()["AWSELB"]);
+    
+    console.log(pm.cookies);
+  }
+});
+
+2. Guid to make automatic account 
+
+test-automation-selfregister-{{$guid}}-pdf
+
+3. Read Specification to put the key or value in right place
+
+HTTP Request
+Params/Object:
+ key and value: 
+ 
+Body request, JSON request:
+ 
+
+ 
+
+HTTP Response: check response at btm, what need to focus on status, body cookies and headers, and test results is just like a sandbox what can check the test results from tests.
+
+3. userUTCDateTimeMillis 
+Find userUTCDateTimeMillis in this url: https://currentmillis.com/
+
+userUTCDateTimeMillis is between  eUTCStartDateTime and de[oeUTCEndDateTime
+
+4. No space after the params key! 
+4. Single response and multiple response
+Set function:
+
+function checkTypeIsSAMBool(obj) {
+    pm.expect(obj).to.be.a('string');
+    pm.expect(obj).to.be.oneOf(["Y" /* Yes/True */,
+                                "N" /* No/False */]);
+}
+
+pm.test("Response JSON entry has - useExternalEventProvider - is a string with 'Y' or 'N'", function () {
+    pm.expect(jsonData).to.have.property('useExternalEventProvider');
+    checkTypeIsSAMBool(jsonData.useExternalEventProvider);
+}); // 
+
+pm.test("Response JSON dict entry has - useExternalEventProvider - is 'Y' or 'N'", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('useExternalEventProvider');
+        checkTypeIsSAMBool(jsonData[i].useExternalEventProvider)
+    }
+});
+ 
+if (jsonData.eGroups[i].hasOwnProperty('type') === true) 
+5. Optional 
+
+pm.test("Response JSON dict entry has - notificationURL - non-null and non empty for certain notification Group/Types", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('notificationURL');
+        
+        // for these notification group types, we MUSt have a notification URL. for General its optional.
+        if ([   "C" /* Company */,
+                "E" /* Event */,
+                "A" /* Asset */
+                ].includes(jsonData[i].notificationGroupCode) === true) {
+
+            // the notifciation URL must be non-null and be something.
+            pm.expect(jsonData[i]).to.have.property('notificationURL');
+            pm.expect(jsonData[i].notificationURL).to.be.a('string');
+            
+            // the URL can be a MI deeplink URL or a public URL to a webpage.
+            
+            pm.expect(jsonData[i].notificationURL.length).to.be.at.least(1);
+       }
+    }
+});
+
+pm.test("Response JSON dict entry has - (optional) ePostCode- string (>= 1 length)", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        if (jsonData[i].hasOwnProperty('ePostCode') === true) {
+            pm.expect(jsonData[i].ePostCode).to.be.a('string');
+            pm.expect(jsonData[i].ePostCode.length).to.be.at.least(1);
+        }
+    }
+});
+//pm.test("Response JSON entry has - eGroups field - ()type - non null string of a specific value", function () {
+//    var i=0;
+//    for (i; i<jsonData.eGroups[i].length;i++){
+ //        if (jsonData[i].eGroups.hasOwnProperty('type') === true) {
+ //            pm.expect(jsonData.eGroups[i]).to.have.property('typed');
+//        pm.expect(jsonData.eGroups[i].typed).to.be.a('string');
+//pm.expect(jsonData.eGroups[i].typed.length).to.equal("G".length);
+//        }
+//    }
+//});
+
+
+
+6. Function of //
+function checkIsNonNullUUID(obj) {
+    pm.expect(obj).to.be.a('string');
+    pm.expect(obj).to.match(/^[abcdefABCDEF0-9]{8}-[abcdefABCDEF0-9]{4}-[abcdefABCDEF0-9]{4}-[abcdefABCDEF0-9]{4}-[abcdefABCDEF0-9]{12}$/, "Not a valid UUID format");
+
+7. How to put data driven for automatic test
+
+https://learning.getpostman.com/docs/postman/collection_runs/working_with_data_files/
+
+1st. Create a json or csv file 
+Each column represent each data 
+ 
+
+2nd put data parameter in postman params 
+
+  
+
+3rd run collections
+
+ \
+Upload the data csv then choose lterations.
+
+8. Jason is array or not array
+
+If response is only 1, jason is not array 
+Jason is object:
+pm.test("Response JSON is an object/dict", function () {
+    pm.expect(jsonData).to.be.a('object');
+});
+
+pm.test("Response JSON entry has - uId - non zero positive number", function () {
+    pm.expect(jsonData).to.have.property('uId');
+    pm.expect(jsonData.uId).to.be.a('number');
+    pm.expect(jsonData.uId).to.be.at.least(1);
+});
+
+pm.test("Response JSON entry has - uEmail - non empty string", function () {
+    pm.expect(jsonData).to.have.property('uEmail');
+    pm.expect(jsonData.uEmail).to.be.a('string');
+    pm.expect(jsonData.uEmail.length).to.be.at.least(6);    // min length("a@b.co")
+});
+
+pm.test("Response JSON entry has - uFirstName - null or string", function () {
+    pm.expect(jsonData).to.have.property('uFirstName');
+    checkTypeIsStringOrNull(jsonData.uFirstName);
+});
+
+Jason is array
+
+const jsonData = pm.response.json();
+pm.test("Response JSON is an array", function () {
+   pm.expect(jsonData).to.be.a('array');
+});
+
+pm.test("Response JSON dict entry has - eId - non zero positive number", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eId');
+        pm.expect(jsonData[i].eId).to.be.a('number');
+        pm.expect(jsonData[i].eId).to.be.at.least(1);
+    }
+});
+
+pm.test("Response JSON dict entry has - eTimezoneId - non null and a string (>= 1 length)", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eTimezoneId');
+        pm.expect(jsonData[i].eTimezoneId).to.be.a('string');
+        pm.expect(jsonData[i].eTimezoneId.length).to.be.at.least(1);
+    }
+});
+pm.test("Response JSON dict entry has - eGmtOffsetMinutes - number", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eGmtOffsetMinutes');
+        pm.expect(jsonData[i].eGmtOffsetMinutes).to.be.a('number');
+    }
+});
+
+pm.test("Response JSON dict entry has - (optional) eFlyerPdf - string", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        if (jsonData[i].hasOwnProperty('eFlyerPdf') === true) {
+            pm.expect(jsonData[i].eFlyerPdf).to.be.a('string');
+            pm.expect(jsonData[i].eFlyerPdf.length).to.be.at.least(1);
+        }
+    }
+});
+
+pm.test("Response JSON dict entry has - eStatus - non null string of a specific value", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('eStatus');
+        pm.expect(jsonData[i].eStatus).to.be.a('string');
+        pm.expect(jsonData[i].eStatus).to.be.oneOf(["A" /* Active */,
+                                                    "C" /* Cancelled */
+                                                     /* "T" /* Draft - should never receive these */
+                                                     /* "D" /* Deleted - should never receive these */
+                                                   ]);
+    }
+});
+pm.test("Response JSON dict entry has - version - should be 2", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('version');
+        pm.expect(jsonData[i].version).to.be.a('number');
+        pm.expect(jsonData[i].version).to.be.equal(2);
+    }
+});
+
+9. Nested test
+
+pm.test("Response JSON has key 'addresses' which is an array with zero or more items", function () {
+    pm.expect(jsonData).to.have.property('addresses');
+    pm.expect(jsonData.addresses).to.be.a('array');
+    pm.expect(jsonData.addresses.length).to.be.at.least(0);
+});
+
+pm.test("Response JSON entry has - address field - uuid - non null string", function () {
+    var i=0;
+    for (i; i<jsonData.addresses.length;i++){
+        pm.expect(jsonData.addresses[i]).to.have.property('uuid');
+        pm.expect(jsonData.addresses[i].uuid).to.be.a('string');
+        pm.expect(jsonData.addresses[i].uuid.length).to.equal("9c445286-6d38-4073-bd84-ccd4c6d13988".length);
+    }
+});
+
+
+Example2 
+To verify jsonData.eGroups[i].type
+pm.test("Response JSON has key 'eGroups' which is an array with zero or more items", function () {
+    pm.expect(jsonData).to.have.property('eGroups');
+    pm.expect(jsonData.eGroups).to.be.a('array');
+    pm.expect(jsonData.eGroups.length).to.be.at.least(0);
+});
+
+pm.test("Response JSON entry has - eGroups field - (optional)type - non null string of a specific value", function () {
+    var i=0;
+    for (i; i<jsonData.eGroups.length;i++){
+        if (jsonData.eGroups[i].hasOwnProperty('type') === true) {
+            pm.expect(jsonData.eGroups[i].type).to.be.a('string');
+            pm.expect(jsonData.eGroups[i].type).to.be.equal("G");
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+10. Seperate array test
+
+[
+   {
+       "uPrefId": 121,
+       "type": "APP",
+       "key": "APP-FAV",
+       "values": [
+           {
+               "uPrefValueId": 449,
+               "value": "1,2,3,4",
+               "lastModified": 1569806057502
+           }
+       ]
+   }
+]
+pm.test("Response JSON entry has - fields field - id - non null string", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+         pm.expect(jsonData[0]).to.have.property('values');
+        pm.expect(jsonData[0].values).to.be.a('array');
+        pm.expect(jsonData[0].values.length).to.be.at.least(1);
+         pm.expect(jsonData[0].values[i]).to.have.property('uPrefValueId');
+        pm.expect(jsonData[0].values[i].uPrefValueId).to.be.a('number');
+        pm.expect(jsonData[0].values[i].uPrefValueId).to.be.at.least(0);
+        pm.expect(jsonData[0].values[i]).to.have.property('value');
+        pm.expect(jsonData[0].values[i].value).to.be.a('string');
+        pm.expect(jsonData[0].values[i].value.length).to.be.at.least(0);
+        pm.expect(jsonData[0].values[i]).to.have.property('lastModified');
+        pm.expect(jsonData[0].values[i].lastModified).to.be.a('number');
+        pm.expect(jsonData[0].values[i].lastModified).to.be.at.least(0);
+         
+    }
+});
+
+
+
+
+function checkTypeIsStringOrNull(obj) {
+    pm.expect(obj).to.satisfy(function(s){ return s === null || typeof s == 'string'}, 'must be a string or null');
+}
+function checkTypeIsNumberOrNull(obj) {
+    pm.expect(obj).to.satisfy(function(s){ return s === null || typeof s == 'number'}, 'must be a number or null');
+}
+
+
+//
+// Tests
+//
+
+
+pm.test("Status code is 200", function () { 
+    pm.response.to.have.status(200); 
+});
+
+// cannot be zero as an empty JSON array is always at least two chars ie "[]"
+pm.test("Content-Length is present and is not 0", function () {
+    pm.response.to.have.header("content-length");
+    pm.expect(pm.response.headers.toObject()["content-length"]).to.not.equal("0");
+});
+
+pm.test("Content-Type is present and is 'application/json'", function () {
+    pm.response.to.have.header("Content-Type");
+    pm.response.to.be.header("Content-Type", "application/json");
+});
+
+pm.test("Response must be valid and have a body", function () {
+     // assert that the status code is 200
+     pm.response.to.be.ok; 
+     
+     // assert that the response has a valid JSON body
+     pm.response.to.be.withBody;
+     pm.response.to.be.json; // this assertion also checks if a body exists, so the above check is not needed
+});
+
+const jsonData = pm.response.json();
+//pm.test("Response JSON is an array", function () {
+//   pm.expect(jsonData).to.be.a('array');
+//});
+
+
+
+
+pm.test("Response JSON is an object/dict", function () {
+    pm.expect(jsonData).to.be.a('array');
+});
+
+pm.test("Response JSON dict entry has - uPrefId - should be not null ", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('uPrefId');
+        pm.expect(jsonData[i].uPrefId).to.be.a('number');
+        checkTypeIsNumberOrNull(jsonData[i].uPrefId);
+      
+    }
+})  
+pm.test("Response JSON dict entry has - type - should be not null ", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('type');
+        pm.expect(jsonData[i].type).to.be.a('string');
+        checkTypeIsStringOrNull(jsonData[i].type);
+      
+    }
+})  
+pm.test("Response JSON dict entry has - key - should be not null ", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('key');
+        pm.expect(jsonData[i].key).to.be.a('string');
+        checkTypeIsStringOrNull(jsonData[i].key);
+      
+    }
+})  
+pm.test("Response JSON dict entry has - values - should be not null ", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+        pm.expect(jsonData[i]).to.have.property('values');
+        pm.expect(jsonData[i].values).to.be.a('array');
+        pm.expect(jsonData[i].values.length).to.be.at.least(0);
+      
+    }
+}) 
+
+
+pm.test("Response JSON entry has - values field  - with string,number check", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+         pm.expect(jsonData[0]).to.have.property('values');
+        pm.expect(jsonData[0].values).to.be.a('array');
+        pm.expect(jsonData[0].values.length).to.be.at.least(1);
+         pm.expect(jsonData[0].values[i]).to.have.property('uPrefValueId');
+        pm.expect(jsonData[0].values[i].uPrefValueId).to.be.a('number');
+        pm.expect(jsonData[0].values[i].uPrefValueId).to.be.at.least(0);
+        pm.expect(jsonData[0].values[i]).to.have.property('value');
+        pm.expect(jsonData[0].values[i].value).to.be.a('string');
+        pm.expect(jsonData[0].values[i].value.length).to.be.at.least(0);
+        pm.expect(jsonData[0].values[i]).to.have.property('lastModified');
+        pm.expect(jsonData[0].values[i].lastModified).to.be.a('number');
+        pm.expect(jsonData[0].values[i].lastModified).to.be.at.least(0);
+         
+    }
+});
+
+pm.test("Response JSON entry has - values field - string,number check", function () {
+    var i=0;
+    for (i; i<jsonData.length;i++){
+       console.log(jsonData[i].values[0].uPrefValueId);
+         pm.expect(jsonData[0]).to.have.property('values');
+        pm.expect(jsonData[0].values).to.be.a('array');
+        pm.expect(jsonData[0].values.length).to.be.at.least(1);
+      
+        pm.expect(jsonData[i].values[0]).to.have.property('d')
+        pm.expect(jsonData[0].values[0].uPrefValueId).to.be.a('number');
+        pm.expect(jsonData[0].values[0].uPrefValueId).to.be.at.least(0);
+        pm.expect(jsonData[0].values[0]).to.have.property('value');
+        pm.expect(jsonData[0].values[0].value).to.be.a('string');
+        pm.expect(jsonData[0].values[0].value.length).to.be.at.least(0);
+        pm.expect(jsonData[0].values[0]).to.have.property('lastModified');
+        pm.expect(jsonData[0].values[0].lastModified).to.be.a('number');
+        pm.expect(jsonData[0].values[0].lastModified).to.be.at.least(0);
+         
+    }
+});
+
+
+test:
+pm.environment.set("SAM_Address_uuid", JSON.stringify(pm.response.json()));
+postman.setNextRequest("Step 3 - updateAddress");
+
+
+postman.setNextRequest("Step 2 - updateSmartEntry");
+
+{{SAM_VALID_UUID}}
+
+pre:
+var AddressResp = JSON.parse(pm.environment.get("SAM_Address_uuid"));
+
+pm.environment.set("SAM_VALID_UUID", AddressResp.uuid);
+
+
